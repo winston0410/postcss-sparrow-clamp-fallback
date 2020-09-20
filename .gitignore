@@ -66,5 +66,9 @@ typings/
 # Dist
 dist
 
+# Purescript
+output
+purescript
+
 #jsdoc2md
 README.hbs
