@@ -23,11 +23,20 @@ describe('postcss-sparrow-clamp-fallback', function () {
   describe('if clamp() is found', function () {
     describe('if fallback method is set to minmax', function () {
       it('should replace the clamp() with the combination of min() and max()', async function () {
-        plugin({
-          fallback: 'minmax'
-        })()
         const result = await postcss([
-
+          sparrow({
+            transformations: [
+              {
+                selectors: ['*'],
+                inclusion: true,
+                callbacks: [
+                  plugin({
+                    fallback: 'minmax'
+                  })
+                ]
+              }
+            ]
+          })
         ])
           .process(css, {
             from: undefined
