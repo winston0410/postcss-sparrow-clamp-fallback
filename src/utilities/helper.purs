@@ -1,18 +1,31 @@
 module Helper where
 
 import Prelude
--- import Effect (Effect)
--- import Effect.Console (log)
-import Data.String.Regex (test, regex)
-import Data.String.Regex.Flags (noFlags)
+import Effect (Effect)
+import Effect.Console (log)
+import Data.String.Regex (Regex, test, regex)
+import Data.String.Regex.Flags (RegexFlags, noFlags)
+import Data.String.Regex.Unsafe (unsafeRegex)
 
--- createFallback :: String -> Effect Unit
--- createFallback "minmax" = log "Options is minmax"
--- createFallback "media" = log "Options is media"
--- createFallback str = log "This is not accepted"
+-- data Decl = DR { value :: String }
+type Decl = { value :: String }
+type Option = { fallback :: String }
+
+clampRegex :: Regex
+clampRegex = unsafeRegex "^clamp" noFlags
 
 hasClamp :: String -> Boolean
-hasClamp = test $ regex "clamp" noFlags
+hasClamp str = test clampRegex str
 
--- hasClamp :: Regex -> String -> Boolean
--- hasClamp value = test /clamp/ value
+getValue :: Decl -> String
+getValue obj = obj."value"
+
+filterDeclByValue :: Decl -> Option -> Decl
+filterDeclByValue decl option = if decl # getValue # hasClamp
+  then createFallback decl option
+  else decl
+
+createFallback :: Decl -> Option -> Decl
+-- createFallback { fallback: "minmax" } = log "Options is minmax"
+-- createFallback { fallback: "media" } = log "Options is media"
+createFallback decl option = decl
