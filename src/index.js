@@ -1,12 +1,12 @@
 import {
-  identity,
   createFallback
-} from './purescript/Helper/index.js'
+} from './utilities/helper.js'
 
 export default (config) => (decl) => {
   const options = {
     fallback: config.fallback
   }
 
+  console.log(decl)
   return createFallback(options.fallback)
 }
