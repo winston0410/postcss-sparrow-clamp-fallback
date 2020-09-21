@@ -71,6 +71,7 @@ output
 purescript
 .spago
 .psci_modules
+.psc-ide-port
 
 #jsdoc2md
 README.hbs
