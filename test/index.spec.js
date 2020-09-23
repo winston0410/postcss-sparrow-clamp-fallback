@@ -41,6 +41,8 @@ describe('postcss-sparrow-clamp-fallback', function () {
           .process(css, {
             from: undefined
           })
+
+        console.log(result)
       })
     })
 

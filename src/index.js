@@ -1,14 +1,14 @@
 import {
   // createFallback,
   filterDeclByValue
-} from './utilities/helper.js'
+} from './utilities/Helper.js'
 
 export default (config) => (decl) => {
   const options = {
     fallback: config.fallback
   }
 
-  // console.log(decl)
+  // console.log('Callback running')
   return filterDeclByValue(decl)(options)
   // return createFallback(options.fallback)
 }
