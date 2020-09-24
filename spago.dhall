@@ -6,8 +6,10 @@ You can edit this file as you like.
 , dependencies =
   [ "arrays"
   , "console"
+  , "debug"
   , "effect"
   , "maybe"
+  , "partial"
   , "prelude"
   , "psci-support"
   , "strings"
