@@ -6,3 +6,4 @@ type Decl = { value :: String,
 type Option = { fallback :: String }
 type Value = String
 type Prop = String
+type Rule = String
