@@ -61,5 +61,5 @@ getDeclValue = _."value"
 -- Unfinished
 createNewValue :: Option -> Decl -> Value
 createNewValue { fallback: "minmax"} decl = decl # getDeclValue # getSubValues # constructValue
--- createNewValue { fallback: "media"} decl = decl # getDeclValue
-createNewValue _ decl = "World"
+createNewValue { fallback: "media"} decl = decl # getDeclValue
+createNewValue _ decl = "You need to use the correct fallback value"

@@ -17,7 +17,14 @@ describe('postcss-sparrow-clamp-fallback', function () {
     a{
       letter-spacing: 20px;
       font-size: clamp(20px, 2vw, 40px);
-    }`
+    }
+
+    @media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+    `
   })
 
   describe('if clamp() is found', function () {
@@ -44,9 +51,21 @@ describe('postcss-sparrow-clamp-fallback', function () {
                 inclusion: true,
                 callbacks: [
                   require('postcss-sparrow-props-filter')({
+                    props: ['background-color'],
+                    inclusion: true,
+                    callbacks: [
+                      (decl) => {
+                        console.log(decl)
+                      }
+                    ]
+                  }),
+                  require('postcss-sparrow-props-filter')({
                     props: ['font-size'],
                     inclusion: true,
                     callbacks: [
+                      (decl) => {
+                        console.log(decl)
+                      },
                       (decl) => {
                         expect(decl.value).to.match(/^max/)
                         expect(decl.value).to.match(/min/)
