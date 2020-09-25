@@ -36,13 +36,31 @@ describe('postcss-sparrow-clamp-fallback', function () {
                 ]
               }
             ]
+          }),
+          sparrow({
+            transformations: [
+              {
+                selectors: ['*'],
+                inclusion: true,
+                callbacks: [
+                  require('postcss-sparrow-props-filter')({
+                    props: ['font-size'],
+                    inclusion: true,
+                    callbacks: [
+                      (decl) => {
+                        expect(decl.value).to.match(/^max/)
+                        expect(decl.value).to.match(/min/)
+                      }
+                    ]
+                  })
+                ]
+              }
+            ]
           })
         ])
           .process(css, {
             from: undefined
           })
-
-        console.log(result)
       })
     })
 
