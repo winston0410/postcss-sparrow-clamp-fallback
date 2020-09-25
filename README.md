@@ -11,6 +11,7 @@ A PostCSS plugin that creates fallback of `clamp()` for you.
 
 ```css
 /* After transformations */
+/* If you set fallback: "media" */
 @media (width <= 1000px) {
   .foo{
    font-size: 20px; /*min*/
@@ -28,9 +29,17 @@ A PostCSS plugin that creates fallback of `clamp()` for you.
 }
 ```
 
+```css
+/* After transformations */
+/* If you set fallback: "minmax" */
+.foo {
+  font-size: max(20px, min(2vw, 40px));
+}
+```
+
 ## Why do I need this plugin?
 
-`clamp()` is a very powerful tool for creating a responsive design.  Nevertheless, its support is limited at the moment. As of Sept 2020, this rule is only supported by [77% of all browsers](https://caniuse.com/?search=clamp()).
+`clamp()` is a very powerful tool for creating a responsive design. Nevertheless, its support is limited at the moment. As of Sept 2020, this rule is only supported by [77% of all browsers](https://caniuse.com/?search=clamp()).
 
 This plugin will help you transform `clamp()` with the combination of `min()` and `max()` or media queries for more browser support.
 
@@ -41,9 +50,7 @@ This plugin require you to use [PostCSS Sparrow](https://www.npmjs.com/package/p
 Download both `postcss-sparrow` and this plugin through NPM.
 
 ```shell
-
 npm i postcss postcss-sparrow postcss-sparrow-clamp-fallback
-
 ```
 
 Then import this plugin as the callback for [PostCSS Sparrow](https://www.npmjs.com/package/postcss-sparrow).
