@@ -1,6 +1,10 @@
 # PostCSS Sparrow Clamp Fallback
 
-A PostCSS plugin that creates fallback of `clamp()` for you.
+[![Known Vulnerabilities](https://snyk.io/test/github/winston0410/postcss-sparrow-clamp-fallback/badge.svg?targetFile=package.json)](https://snyk.io/test/github/winston0410/postcss-sparrow-clamp-fallback?targetFile=package.json) [![Test Coverage](https://api.codeclimate.com/v1/badges/197685e0ce4442a09dc5/test_coverage)](https://codeclimate.com/github/winston0410/postcss-sparrow-clamp-fallback/test_coverage) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/3c9e4b7149f040199bff83165f61ac17)](https://www.codacy.com/manual/winston0410/postcss-sparrow-clamp-fallback/dashboard?utm_source=github.com&utm_medium=referral&utm_content=winston0410/postcss-sparrow-clamp-fallback&utm_campaign=Badge_Grade) 
+
+<!-- [![Maintainability](https://api.codeclimate.com/v1/badges/197685e0ce4442a09dc5/maintainability)](https://codeclimate.com/github/winston0410/postcss-sparrow-clamp-fallback/maintainability) -->
+
+ A PostCSS plugin that creates fallback of `clamp()` for you.
 
 ```css
 /* Before transformations */
