@@ -5,7 +5,9 @@ import Prelude
 import Data.Array (index)
 import Data.Array.NonEmpty (toArray)
 import Data.Array.NonEmpty.Internal (NonEmptyArray)
-import Data.Maybe (Maybe(..), fromJust)
+import Data.Maybe (Maybe(..), fromJust, fromMaybe)
+import Data.Either (hush)
+import Data.Traversable (sequence)
 import Data.Newtype (unwrap)
 import Data.String.Regex (Regex, test, regex, match)
 import Data.String.Regex.Flags (RegexFlags, noFlags, global)
@@ -23,19 +25,15 @@ unwrapString :: Maybe String -> String
 unwrapString (Just n) = n
 unwrapString Nothing = ""
 
--- Use where to extract value from Maybe
-getSubValues :: Value -> Array String
-getSubValues str = str # matchResult # unwrapArray <#> unwrapString
+getSubValues :: String -> Array String
+getSubValues = fromMaybe [] <<< go
   where
-    matchResult :: Value -> Maybe (NonEmptyArray (Maybe String))
-    matchResult str = match valueRegex str
-
-    valueRegex :: Regex
-    valueRegex = unsafeRegex "\\d[\\w%]*" global
-
-    unwrapArray :: forall a. Maybe (NonEmptyArray a) -> Array a
-    unwrapArray (Just n) = n # toArray
-    unwrapArray Nothing = []
+    go :: String -> Maybe (Array String)
+    go str = do
+      regExp <- hush $ regex "\\d[\\w%]*" global
+      result <- match regExp str
+      nonEArr <- sequence result
+      pure $ toArray nonEArr
 
 constructValue :: Array String -> Value
 constructValue arr = "max(" <> firstValue <> ", min(" <> secondValue <> ", " <> thirdValue <> "))"

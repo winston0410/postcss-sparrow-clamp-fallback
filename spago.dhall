@@ -8,6 +8,8 @@ You can edit this file as you like.
   , "console"
   , "debug"
   , "effect"
+  , "either"
+  , "foldable-traversable"
   , "maybe"
   , "partial"
   , "prelude"
