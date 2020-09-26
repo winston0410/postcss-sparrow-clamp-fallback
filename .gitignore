@@ -71,6 +71,8 @@ output
 purescript
 .spago
 .psci_modules
+
+# Purescript IDE
 .psc-ide-port
 
 # Ignore purescript output
