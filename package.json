@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "test": "npx mocha --recursive './test/**/*.js' --require esm",
-    "build": "spago bundle-module --main Helper --to src/utilities/_Helper.js; NODE_ENV=production npx rollup -c;"
+    "build": "spago bundle-module --main Helper --to src/utilities/_Helper.js; NODE_ENV=production npx rollup -c;",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
