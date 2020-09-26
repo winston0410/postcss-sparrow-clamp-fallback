@@ -13,15 +13,15 @@ export default [{
     file: 'dist/index.esm.js',
     format: 'esm',
     plugins: [
-      terser({
-        compress: {
-          drop_console: true
-        },
-        output: {
-          comments: false
-        },
-        ecma: 2019
-      })
+      // terser({
+      //   compress: {
+      //     drop_console: true
+      //   },
+      //   output: {
+      //     comments: false
+      //   },
+      //   ecma: 2019
+      // })
     ]
   },
   {
@@ -29,15 +29,15 @@ export default [{
     file: 'dist/index.cjs.js',
     format: 'cjs',
     plugins: [
-      terser({
-        compress: {
-          drop_console: true
-        },
-        output: {
-          comments: false
-        },
-        ecma: 2019
-      })
+      // terser({
+      //   compress: {
+      //     drop_console: true
+      //   },
+      //   output: {
+      //     comments: false
+      //   },
+      //   ecma: 2019
+      // })
     ]
   }
   ],
