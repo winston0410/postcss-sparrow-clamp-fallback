@@ -1,10 +1,8 @@
 # PostCSS Sparrow Clamp Fallback
 
-[![Known Vulnerabilities](https://snyk.io/test/github/winston0410/postcss-sparrow-clamp-fallback/badge.svg?targetFile=package.json)](https://snyk.io/test/github/winston0410/postcss-sparrow-clamp-fallback?targetFile=package.json) [![Maintainability](https://api.codeclimate.com/v1/badges/197685e0ce4442a09dc5/maintainability)](https://codeclimate.com/github/winston0410/postcss-sparrow-clamp-fallback/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/197685e0ce4442a09dc5/test_coverage)](https://codeclimate.com/github/winston0410/postcss-sparrow-clamp-fallback/test_coverage) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/3c9e4b7149f040199bff83165f61ac17)](https://www.codacy.com/manual/winston0410/postcss-sparrow-clamp-fallback/dashboard?utm_source=github.com&utm_medium=referral&utm_content=winston0410/postcss-sparrow-clamp-fallback&utm_campaign=Badge_Grade) 
+[![Known Vulnerabilities](https://snyk.io/test/github/winston0410/postcss-sparrow-clamp-fallback/badge.svg?targetFile=package.json)](https://snyk.io/test/github/winston0410/postcss-sparrow-clamp-fallback?targetFile=package.json) [![Maintainability](https://api.codeclimate.com/v1/badges/197685e0ce4442a09dc5/maintainability)](https://codeclimate.com/github/winston0410/postcss-sparrow-clamp-fallback/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/197685e0ce4442a09dc5/test_coverage)](https://codeclimate.com/github/winston0410/postcss-sparrow-clamp-fallback/test_coverage) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/3c9e4b7149f040199bff83165f61ac17)](https://www.codacy.com/manual/winston0410/postcss-sparrow-clamp-fallback/dashboard?utm_source=github.com&utm_medium=referral&utm_content=winston0410/postcss-sparrow-clamp-fallback&utm_campaign=Badge_Grade)
 
-<!-- [![Maintainability](https://api.codeclimate.com/v1/badges/197685e0ce4442a09dc5/maintainability)](https://codeclimate.com/github/winston0410/postcss-sparrow-clamp-fallback/maintainability) -->
-
- A PostCSS plugin that creates fallback of `clamp()` for you.
+A PostCSS plugin that creates fallback of `clamp()` for you.
 
 ```css
 /* Before transformations */
@@ -16,6 +14,7 @@
 ```css
 /* After transformations */
 /* If you set fallback: "media" */
+/* Coming soon */
 @media (width <= 1000px) {
   .foo{
    font-size: 20px; /*min*/
@@ -51,7 +50,7 @@ This plugin will help you transform `clamp()` with the combination of `min()` an
 
 - Falling back with `min()` and `max()` will give you [87.79% browser support](https://caniuse.com/?search=min()).
 
-- Falling back with `media queries` will give you [98.67% browser support, which would also support up to IE 9](https://caniuse.com/?search=media%20queries)
+- Falling back with `media queries` will give you [98.67% browser support, which would also support up to IE 9](https://caniuse.com/?search=media%20queries) **(Coming soon)**
 
 ## Installation
 
@@ -95,3 +94,5 @@ module.exports = {
 Choose the way to fallback `clamp()`. Set it to `'minmax'` to fallback with the combination of `min()` and `max()`; set it to `'media'` to fallback with media queries.
 
 This option is default to `'minmax'`.
+
+Option for `'media'` **coming soon**.
