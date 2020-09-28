@@ -2,5 +2,5 @@
 exclude_paths:
   - '**.md'
   - '**.json'
-  - '.*spago/.*'
+  - '.spago/**/*.js'
 ---
