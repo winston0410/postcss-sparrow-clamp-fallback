@@ -47,6 +47,12 @@
 
 This plugin will help you transform `clamp()` with the combination of `min()` and `max()` or media queries for more browser support.
 
+### Browser support for various fallback
+
+- Falling back with `min()` and `max()` will give you [87.79% browser support](https://caniuse.com/?search=min()).
+
+- Falling back with `media queries` will give you [98.67% browser support, which would also support up to IE 9](https://caniuse.com/?search=media%20queries)
+
 ## Installation
 
 This plugin require you to use [PostCSS Sparrow](https://www.npmjs.com/package/postcss-sparrow) for matching with selectors you want.
