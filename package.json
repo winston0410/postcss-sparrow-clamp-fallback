@@ -1,6 +1,6 @@
 {
   "name": "postcss-sparrow-clamp-fallback",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A PostCSS plugin that creates fallback of clamp() for you.",
   "main": "./dist/index.cjs.js",
   "files": [
