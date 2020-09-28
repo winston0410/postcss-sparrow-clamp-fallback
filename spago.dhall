@@ -15,6 +15,7 @@ You can edit this file as you like.
   , "partial"
   , "prelude"
   , "psci-support"
+  , "string-parsers"
   , "strings"
   ]
 , packages = ./packages.dhall
