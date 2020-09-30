@@ -22,8 +22,7 @@ import ReplaceWith (replaceWith)
 import Type (Decl, Option, Value, Prop, Rule)
 
 unwrapString :: Maybe String -> String
-unwrapString (Just n) = n
-unwrapString Nothing = ""
+unwrapString = fromMaybe ""
 
 getSubValues :: String -> Array String
 getSubValues = fromMaybe [] <<< go
@@ -39,7 +38,7 @@ constructValue :: Array String -> Value
 constructValue arr = "max(" <> firstValue <> ", min(" <> secondValue <> ", " <> thirdValue <> "))"
   where
     getElementByIndex :: Int -> Maybe String
-    getElementByIndex num = arr `index` num
+    getElementByIndex = index arr
 
     firstValue :: String
     firstValue = getElementByIndex 0 # unwrapString
